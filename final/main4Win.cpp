@@ -61,7 +61,7 @@ void addGood(good** goods, int* size, int* capacity) {
         // (тип памяти)realloc(объект, размер)
         *goods = (good*)realloc(*goods, *capacity * sizeof(good));
     }
-    cout << "\nНажмите любую кнопку для продолжения...";
+    cout << "\nНажмите любую кнопку для продолжения...\n";
     system("pause");
     system("cls");
 }
@@ -84,7 +84,7 @@ void printGoods(good* goods, int size) {
             cout << setw(12) << goods[i].name << setw(12) <<  goods[i].price << setw(12) << goods[i].count << "\n";
     }
 
-    cout << "\nНажмите любую кнопку для продолжения...";
+    cout << "\nНажмите любую кнопку для продолжения...\n";
     system("pause");
     system("cls");
 }
@@ -107,7 +107,7 @@ void printHighest(good* goods, int size) {
     }
 
     cout << "Самая высокая цена - " << max << ", Товар - "<< goods[imax].name << "\n";
-    cout << "\nНажмите любую кнопку для продолжения...";
+    cout << "\nНажмите любую кнопку для продолжения...\n";
     system("pause");
     system("cls");
 }
@@ -124,7 +124,7 @@ void printLowest(good* goods, int size) {
         }
     }
     cout << "Самая низкая цена - " << min << ". Товар - "<< goods[imin].name << "\n";
-    cout << "\nНажмите любую кнопку для продолжения...";
+    cout << "\nНажмите любую кнопку для продолжения...\n";
     system("pause");
     system("cls");
 }
@@ -167,7 +167,7 @@ void userRegistration() {
             user[i].password = password;
             user[i].isAdmin = false;
             cout << "Пользователь" << login << "успешно добавлен";
-            cout << "\nНажмите любую кнопку для продолжения...";
+            cout << "\nНажмите любую кнопку для продолжения...\n";
             system("pause");
             system("cls");
             return;
@@ -229,13 +229,13 @@ bool showLoginUI() {
         // В случае выбора регистрации нового пользователя:
         // обращаемся к функции регистрации
         userRegistration();
-        // и рекурсивно к функции авторизации
         showLoginUI();
-        return false;
     default:
-        // Если ввод некорректный - рекурсивно обращаемся к функции авторизации
+        system("cls");
+        cin.clear();
+        cin.ignore(1,'\n');
+        cout << "ошибка новичка.";
         showLoginUI();
-        return false;
     }
 }
 
@@ -258,7 +258,7 @@ void printUsers() {
     else {
         cout << "Пользователь " << user[loggedUser].name << " не имеет прав администратора.\n";
     }
-    cout << "\nНажмите любую кнопку для продолжения...";
+    cout << "\nНажмите любую кнопку для продолжения...\n";
     system("pause");
     system("cls");
 }
